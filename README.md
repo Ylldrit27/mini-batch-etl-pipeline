@@ -19,3 +19,17 @@ The goal is to simulate a production-style data workflow:
 
 ## Why This Project?
 Built as part of preparation for distributed data engineering and production data systems work.
+
+## Setup
+
+Clone the repository and install dependencies:
+
+```bash
+git clone https://github.com/Ylldrit27/mini-batch-etl-pipeline.git
+cd mini-batch-etl-pipeline
+
+python -m venv venv
+source venv/bin/activate
+
+pip install -r requirements.txt
+python src/main.py
