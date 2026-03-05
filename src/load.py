@@ -1,4 +1,3 @@
-# src/load.py
 import os
 
 def load_data(df):
@@ -10,4 +9,3 @@ def load_data(df):
     os.makedirs(os.path.dirname(output_path), exist_ok=True)
     
     df.to_csv(output_path, index=False)
-    print(f"Data loaded successfully! Saved to {output_path}")
