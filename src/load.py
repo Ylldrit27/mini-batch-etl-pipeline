@@ -1,11 +1,22 @@
-import os
+import sqlite3
+from logger import get_logger
+
+logger = get_logger()
 
 def load_data(df):
-    """Save transformed data to output folder."""
-    current_dir = os.path.dirname(__file__)
-    output_path = os.path.join(current_dir, "..", "output", "transformed_customers.csv")
+    """Load cleaned data into SQLite database."""
     
-    # Make sure output folder exists
-    os.makedirs(os.path.dirname(output_path), exist_ok=True)
+    logger.info("Loading data into SQLite database")
     
-    df.to_csv(output_path, index=False)
+    conn = sqlite3.connect("customer_data.db")
+
+    df.to_sql(
+        "customers", 
+        conn, 
+        if_exists="replace", 
+        index=False
+    )
+
+    conn.close()
+
+    logger.info("Data successfully loaded into database")
