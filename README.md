@@ -1,7 +1,7 @@
 # Simple Batch ETL Pipeline
 
 ## Overview
-This project demonstrates a simple batch ETL (Extract, Transform, Load) pipeline built in Python to simulate a production-style data ingestion and processing workflow.
+This project demonstrates a simple batch ETL (Extract, Transform, Load) pipeline built in Python to simulate a real-world data ingestion and processing workflow.
 
 The goal is to simulate a production-style data workflow:
 - Extract raw CSV data
@@ -12,8 +12,9 @@ The goal is to simulate a production-style data workflow:
 ## Concepts Covered
 - Batch processing
 - Data cleaning & transformation
-- Idempotent loading
-- Logging
+- Idempotent data loading
+- Structured logging
+- Error handling
 - SQL integration
 - Basic data quality checks
 
@@ -21,7 +22,7 @@ The goal is to simulate a production-style data workflow:
 
 The pipeline follows a simple batch ETL structure:
 
-Raw CSV → Extract → Transform → Data Quality Checks → Load (SQLite) → SQL Queries
+Raw CSV → Extract → Transform → Data Quality Checks → Load into SQLite (idempotent) → SQL Queries
 
 The pipeline is designed to separate extraction, transformation, and loading logic into modular components to improve maintainability and readability.
 
@@ -46,8 +47,10 @@ mini-batch-etl-pipeline/
 └── README.md
 ```
 
+Note: `venv/` is ignored in `.gitignore`; create your own virtual environment.
+
 ## Why This Project?
-Built as part of preparation for distributed data engineering and production data systems work.
+Built as part of preparation for distributed data engineering and production data systems work. Demonstrates core ETL concepts, modular pipeline design, logging, idempotency, and SQL integration — all essential skills for real-world data engineering roles.
 
 ## Setup
 
